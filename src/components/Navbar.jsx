@@ -6,8 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 bg-white/30  w-full py-6 px-4 md:px-8 flex justify-between items-center text-white z-10">
-      <div className="flex items-center   gap-2">
+<nav className="fixed top-0 max-md:bg-white/40 w-full py-6 px-4 md:px-8 flex justify-between items-center text-white z-10">      <div className="flex items-center   gap-2">
         <img src={logo} alt="Logisence Logo" className="h-6 w-6" />
         <h1 className="text-2xl font-bold text-blue-600">Logisence</h1>
       </div>
