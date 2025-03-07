@@ -6,7 +6,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-<nav className="fixed top-0 max-md:bg-white/40 w-full py-6 px-4 md:px-8 flex justify-between items-center text-white z-10">      <div className="flex items-center   gap-2">
+    <nav className="fixed top-0 bg-white/30 w-full py-3 px-2 md:px-8 flex justify-between items-center text-white z-50">
+      <div className="flex items-center gap-2">
         <img src={logo} alt="Logisence Logo" className="h-6 w-6" />
         <h1 className="text-2xl font-bold text-blue-600">Logisence</h1>
       </div>
@@ -33,12 +34,14 @@ const Navbar = () => {
         absolute md:static 
         top-20 md:top-0 
         left-0 md:left-auto 
+        font-semibold
         w-full md:w-auto 
         bg-white/30 md:bg-transparent 
         backdrop-blur-md md:backdrop-blur-none
         p-4 md:p-0 
         gap-6 
         text-blue-900
+        md:justify-center md:items-center md:flex-1
       `}>
         <li>
           <NavLink 
@@ -49,7 +52,7 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink 
             to="/services" 
             className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-blue-600 transition-colors"}
@@ -57,7 +60,7 @@ const Navbar = () => {
           >
             Services
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink 
             to="/portfolio" 
@@ -67,7 +70,7 @@ const Navbar = () => {
             Portfolio
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink 
             to="/about" 
             className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-blue-600 transition-colors"}
@@ -75,7 +78,7 @@ const Navbar = () => {
           >
             About
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink 
             to="/contact" 
