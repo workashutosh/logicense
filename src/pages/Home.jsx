@@ -1,6 +1,11 @@
 import React from 'react';
 import Services from './Services';
 import Features from './Features';
+import TransformIdeasSection from './TransformIdeasSection';
+import PricingSection from './PricingSection';
+import { Star, Quote, Calendar, ChevronRight } from 'lucide-react';
+import Testimonials from './Testimonials';
+
 
 const Home = () => {
   return (
@@ -35,6 +40,8 @@ const Home = () => {
       {/* Services Section */}
       <Services />
 
+     
+
       {/* Features Section */}
       <Features />
 
@@ -63,32 +70,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Journey Timeline */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white/10 backdrop-blur-md">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 text-center mb-10 sm:mb-12">Our Journey Solving Problems</h2>
-        <div className="max-w-4xl mx-auto">
-          <div className="relative border-l-4 border-blue-600 pl-6">
-            <div className="mb-10">
-              <h3 className="text-lg sm:text-xl font-semibold text-blue-600">2020 – TCS Collaboration</h3>
-              <p className="mt-2 text-blue-800 text-sm sm:text-base">
-                Streamlined their internal tools, reducing process delays by 40% for India’s IT giant.
-              </p>
-            </div>
-            <div className="mb-10">
-              <h3 className="text-lg sm:text-xl font-semibold text-blue-600">2021 – Infosys Project</h3>
-              <p className="mt-2 text-blue-800 text-sm sm:text-base">
-                Built a custom app to improve client reporting, boosting efficiency for this Mumbai-based leader.
-              </p>
-            </div>
-            <div className="mb-10">
-              <h3 className="text-lg sm:text-xl font-semibold text-blue-600">2023 – Wipro Upgrade</h3>
-              <p className="mt-2 text-blue-800 text-sm sm:text-base">
-                Revamped legacy software, cutting downtime by 30% for one of India’s top tech firms.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+       {/* Transform Ideas Section */}
+       <TransformIdeasSection />
 
       {/* Attractive Features Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white/5 backdrop-blur-md">
@@ -115,24 +98,13 @@ const Home = () => {
         </div>
       </section>
 
+      {/* {pricing section } */}
+      <PricingSection />
+
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white/5 backdrop-blur-md">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 text-center mb-10 sm:mb-12">Problems Solved, Clients Happy</h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-6 sm:gap-8">
-          <div className="p-6 bg-white/10 rounded-lg shadow-lg">
-            <p className="text-blue-800 text-sm sm:text-base italic">
-              "Logisence fixed our slow website in a week—sales are up 50%!"
-            </p>
-            <p className="mt-4 text-blue-600 font-semibold text-sm sm:text-base">– Priya S., Mumbai Retail Owner</p>
-          </div>
-          <div className="p-6 bg-white/10 rounded-lg shadow-lg">
-            <p className="text-blue-800 text-sm sm:text-base italic">
-              "Their app solved our customer tracking issues overnight. Amazing!"
-            </p>
-            <p className="mt-4 text-blue-600 font-semibold text-sm sm:text-base">– Rohan K., Startup Founder</p>
-          </div>
-        </div>
-      </section>
+
+      <Testimonials />
+
 
       {/* Call-to-Action Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-blue-600 text-white text-center">
