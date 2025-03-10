@@ -21,12 +21,18 @@ const Home = () => {
             Mumbai’s tech innovators delivering custom websites, apps, and software to fix your business challenges.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="/contact"
-              className="px-6 py-3 text-white bg-blue-600 rounded-full text-base sm:text-lg font-semibold hover:bg-blue-500 transition-all duration-300 shadow-lg w-full sm:w-auto"
-            >
-              Get a Free Quote
-            </a>
+          <div className="relative group">
+      {/* Rotating border element */}
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-full opacity-75 group-hover:opacity-100 blur-sm group-hover:blur-md transition duration-1000 group-hover:duration-200 animate-spin-slow"></div>
+      
+      {/* Button */}
+      <a
+        href="/contact"
+        className="relative px-6 py-3 text-white bg-blue-600 rounded-full text-base sm:text-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
+      >
+        Get a Free Quote
+      </a>
+    </div>
             <a
               href="/portfolio"
               className="px-6 py-3 border border-blue-400 rounded-full text-base sm:text-lg font-semibold hover:bg-blue-600 hover:text-white hover:border-transparent transition-all duration-300 w-full sm:w-auto"
@@ -116,7 +122,7 @@ const Home = () => {
           href="/contact"
           className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg sm:text-xl font-semibold hover:bg-blue-100 transition-all duration-300 shadow-lg"
         >
-          Solve My Problem Now
+          Contact Us
         </a>
       </section>
 
