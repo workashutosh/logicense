@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from "../assets/logo.png"; 
+import {  Calendar } from 'lucide-react';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,10 +38,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 bg-white/40 w-full py-3 px-2 md:px-8 flex justify-between items-center text-white z-50">
+    <nav className="fixed top-0 bg-white/60 w-full py-3 px-2 md:px-8 flex justify-between items-center text-white z-50">
       <div className="flex items-center gap-2">
         <img src={logo} alt="Logisence Logo" className="h-6 w-6" />
-        <h1 className="text-2xl font-bold text-blue-600">Logisence</h1>
+        <h1 className="text-2xl font-bold select-none cursor-pointer text-blue-600">Logisence</h1>
       </div>
 
       {/* Navigation links */}
@@ -70,7 +72,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink 
-            to="/portfolio" 
+            to="/blogs" 
             className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-blue-600 transition-colors"}
             onClick={() => setIsOpen(false)}
           >
@@ -90,12 +92,14 @@ const Navbar = () => {
 
       {/* Calendly link button - right aligned on desktop, in menu on mobile */}
       <div className="hidden md:block">
+        
         <a 
           href="#" 
           onClick={openCalendly}
-          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors"
+          className="bg-blue-600 flex gap-1 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors"
         >
           Schedule time with me
+          <Calendar size={16} />
         </a>
       </div>
 
