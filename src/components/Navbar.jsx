@@ -98,7 +98,7 @@ const Navbar = () => {
           onClick={openCalendly}
           className="bg-blue-600 flex gap-1 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors"
         >
-          Schedule time with me
+          Schedule time with us
           <Calendar size={16} />
         </a>
       </div>
