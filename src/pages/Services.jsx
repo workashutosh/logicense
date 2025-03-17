@@ -44,10 +44,10 @@ const Services = () => {
             Services
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Solutions That Deliver
+            Solutions We Deliver 
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get exceptional results without breaking the bank. We deliver top-tier digital solutions designed to meet your needs and budget.
+            Solution that we deliver that delivers you bussiness to the next level. Solutions that are crafted for scalable businesses
           </p>
         </div>
 
