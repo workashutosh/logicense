@@ -130,7 +130,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Process Section */}
+      {/* Our Process Section
       <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white/5 backdrop-blur-md">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 text-center mb-10 sm:mb-12">Our Process</h2>
         <div className="max-w-4xl mx-auto flex flex-col space-y-8">
@@ -156,7 +156,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Pricing Section */}
       <PricingSection />

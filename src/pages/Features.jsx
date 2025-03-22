@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import illus from '../../public/illus.jpg'
 
 const Features = () => {
   // State to manage the active tab
@@ -36,13 +37,13 @@ const Features = () => {
         {/* Background Dotted Shape */}
         <div className="absolute -top-16 -z-10 mx-auto h-[350px] w-[90%]">
           <img
-            src="/images/shape/shape-dotted-light.svg"
+            src={illus}
             alt="Dotted Shape"
             className="dark:hidden w-full h-full object-cover"
             loading="lazy"
           />
           <img
-            src="/images/shape/shape-dotted-dark.svg"
+            src={illus}
             alt="Dotted Shape"
             className="hidden dark:block w-full h-full object-cover"
             loading="lazy"
@@ -118,7 +119,7 @@ const Features = () => {
             {/* SVG Graphic */}
             <div className="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
               <img 
-                src="/images/type.svg" 
+                src={illus}
                 alt="Features illustration" 
                 className="w-full h-auto"
               />
