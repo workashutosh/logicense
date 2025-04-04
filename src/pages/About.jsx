@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="min-h-screen font-sans bg-cover bg-center" style={{ backgroundImage: 'url("https://keynote.tailwindui.com/_next/static/media/background.6c3571e0.jpg")' }}>
+    <div className="min-h-screen font-sans bg-cover bg-center" >
       <section className="py-20 px-4 md:px-8 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-12">About Logisence</h1>
         <p className="text-lg md:text-xl text-blue-900 max-w-3xl mx-auto">

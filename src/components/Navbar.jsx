@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 bg-white/60 w-full py-3 px-2 md:px-8 flex justify-between items-center text-white z-50">
+    <nav className="fixed top-0 bg-white/30 w-full py-3 px-2 md:px-8 flex justify-between items-center text-white z-50">
       <div className="flex items-center gap-2">
         <img src={logo} alt="Logisence Logo" className="h-6 w-6" />
         <h1 className="text-2xl font-bold select-none cursor-pointer text-blue-600">Logisence</h1>
@@ -54,7 +54,7 @@ const Navbar = () => {
         left-0 md:left-auto 
         font-semibold
         w-full md:w-auto 
-        bg-white/30 md:bg-transparent 
+        bg-white/10 md:bg-transparent 
         backdrop-blur-md md:backdrop-blur-none
         p-4 md:p-0 
         gap-6 
