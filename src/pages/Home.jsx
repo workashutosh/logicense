@@ -9,6 +9,7 @@ import logo from "../assets/logo.png";
 import { Star, Quote, Calendar, ChevronRight, CheckCircle, Users, Clock, Award } from 'lucide-react';
 import Why from './Why';
 import ComparisonTable from './ComparisonTable';
+import SoftwareProcessTimeline from './SoftwareProcessTimeline';
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
         {/* Call-to-action button */}
         <div className="flex flex-col sm:flex-row justify-left gap-4">
           <div className="relative group">
-            <div className="absolute -inset-0.5 border border-white rounded-full opacity-45 group-hover:opacity-100 blur-sm group-hover:blur-md transition duration-1000 group-hover:duration-200 animate-spin-slow"></div>
+            <div className="absolute -inset-0.5 border rounded-full opacity-45 group-hover:opacity-100 blur-sm group-hover:blur-md transition duration-1000 group-hover:duration-200 animate-spin-slow"></div>
             <a
               href="/contact"
               className="relative px-6 py-3 text-white bg-blue-800 rounded-full text-base sm:text-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
@@ -56,6 +57,36 @@ const Home = () => {
 
       {/* Services Section */}
       <Services />
+
+      {/* Why custom software Section */}
+
+      <section className='bg-[#006EFF] h-fit flex flex-col px-8 py-12 relative'>
+  <div className="flex justify-between items-start mb-4">
+    <h1 className='font-bold text-left text-3xl text-white'>Why custom software for your business?</h1>
+    <a 
+      href="/contact" 
+      className="bg-white text-[#006EFF] px-6 py-3 rounded-md font-bold flex items-center transition-transform hover:translate-y-1 shadow-md"
+    >
+      Get a Free Consultation! 
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
+        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#006EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <p className='py-4 text-xl text-left text-white'>
+    Spreadsheets might serve a purpose, but when it's time 
+    to catapult your business to new heights, unlocking the full potential of data, 
+    razor-sharp intelligence, cutting-edge analytics, and seamless automation—nothing rivals the 
+    transformative power of a custom software solution. Prepare to revolutionize your operations and 
+    leave the competition in the dust!
+  </p>
+      </section>
+
+      {/* Software Process Timeline Section */}
+      <SoftwareProcessTimeline />
+
+            {/* Transform Ideas Section */}
+            <TransformIdeasSection />
 
       {/* Features Section */}
       <Features />
@@ -115,8 +146,7 @@ const Home = () => {
     </div>
   </div>
 </section>
-      {/* Transform Ideas Section */}
-      <TransformIdeasSection />
+
 
       {/* Attractive Features Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white/5 backdrop-blur-md">
