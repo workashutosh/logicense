@@ -54,8 +54,6 @@ const Home = () => {
       {/* Comparison Table Section */}
       <ComparisonTable />
 
-      {/* Testimonials Section */}
-
       {/* Services Section */}
       <Services />
 
