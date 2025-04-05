@@ -1,133 +1,94 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PricingSection = () => {
-  return (
-    <section className="overflow-hidden pb-20 bg-white pt-15 lg:pb-25 xl:pb-30">
-      <div className="mx-auto max-w-[1315px] px-4 md:px-8 xl:px-0">
-        {/* Header Section */}
-        <div className="animate_top mx-auto text-center">
-          <div
-            className="animate_top mx-auto text-center"
-            style={{ opacity: 1, transform: 'none' }}
-          >
-            <div className="mb-4 inline-block rounded-full bg-blue-100 px-4.5 py-1.5">
-              <span className="text-lg font-medium text-black">PRICING</span>
-            </div>
-            <h2 className="mx-auto mb-4 text-3xl font-bold text-blue-600 md:w-4/5 xl:w-1/2 xl:text-5xl">
-              Fair and Square
-            </h2>
-            <p className="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%] text-gray-600">
-              Pricing varies based on the complexity and scope of each project.
-              We offer competitive rates and provide clear, transparent estimates
-              to ensure you know exactly what to expect, with no hidden costs.
-            </p>
-          </div>
-        </div>
+  // Array of image URLs - you can add more images here
+  const images = [
+    'https://cdn.dribbble.com/userupload/7169218/file/original-88465ea25a28a1e9490604633582032b.png?resize=2048x1536&vertical=center',
+    'https://cdn.dribbble.com/userupload/33611171/file/original-80c37ec5aa772f28cccd9e9bff8e796a.png?resize=1504x1496&vertical=center',
+    'https://cdn.dribbble.com/userupload/7480349/file/original-7e2f4bc653aeea5038f03acad8af9658.png?resize=2048x1536&vertical=center', 
+    'https://cdn.dribbble.com/userupload/38351112/file/original-04fafa5a4f384ef4a2d17b3245812d0e.png?resize=2048x1538&vertical=center'
+  ];
 
-        {/* Pricing Cards */}
-        <div className="relative mx-auto mt-15 max-w-[1207px] px-4 md:px-8 xl:mt-20 xl:px-0">
-          {/* Background Dotted Shape (optional, can be an image or SVG) */}
-          <div className="absolute -bottom-15 -z-1 h-full w-full">
-            <img
-              alt="Dotted"
-              loading="lazy"
-              decoding="async"
-              style={{
-                position: 'absolute',
-                height: '100%',
-                width: '100%',
-                left: 0,
-                top: 0,
-                right: 0,
-                bottom: 0,
-                color: 'transparent',
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change image every 3 seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Handle manual navigation
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      <h3 className='text-left py-4 px-8 text-2xl bg-black text-blue-500 font-bold'>Designs on your FingerTips ?</h3>
+      {/* PricingSection Container */}
+      <div 
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <div 
+            key={index}
+            className="w-full flex-shrink-0"
+          >
+            <img 
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-auto object-cover"
+              onError={(e) => {
+                // Fallback for the Dribbble URL that's not a direct image
+                e.target.src = 'https://via.placeholder.com/1500x500?text=Image+Not+Available';
               }}
-              src="./images/shape/shape-dotted-light.svg"
             />
           </div>
-
-          {/* Cards Container */}
-          <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap xl:gap-12.5">
-            {/* Card 1: Custom Development */}
-            <div className="animate_top group relative rounded-lg border border-gray-200 bg-white p-7.5 shadow-lg md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black xl:text-5xl">
-                $59{' '}
-                <span className="text-regular text-gray-500">(starting)</span>
-              </h3>
-              <h4 className="mb-2.5 text-lg font-medium text-black">
-                Custom Development
-              </h4>
-              <p className="text-gray-600">
-                Android, iOS, Web, Desktop Softwares
-              </p>
-              <div className="mt-9 border-t border-gray-200 pb-12.5 pt-9">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0">User Flow</li>
-                  <li className="mb-4 text-black last:mb-0">Timely Delivery</li>
-                  <li className="mb-4 text-black last:mb-0">Deployment Support</li>
-                  <li className="mb-4 text-black last:mb-0">
-                    3 Months Free Maintenance
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card 2: Full Project Package (Popular) */}
-            <div className="animate_top group relative rounded-lg border border-gray-200 bg-white p-7.5 shadow-lg md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <div className="absolute -right-3.5 top-7.5 -rotate-90 rounded-bl-full rounded-tl-full bg-blue-600 px-4.5 py-1.5 text-sm font-medium uppercase text-white">
-                popular
-              </div>
-              <h3 className="mb-7.5 text-3xl font-bold text-black xl:text-5xl">
-                $249{' '}
-                <span className="text-regular text-gray-500">(starting)</span>
-              </h3>
-              <h4 className="mb-2.5 text-lg font-medium text-black">
-                Full Project Package
-              </h4>
-              <p className="text-gray-600">
-                End-to-end solutions for all your needs.
-              </p>
-              <div className="mt-9 border-t border-gray-200 pb-12.5 pt-9">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0">Custom Designs</li>
-                  <li className="mb-4 text-black last:mb-0">
-                    Complete Development
-                  </li>
-                  <li className="mb-4 text-black last:mb-0">
-                    Comprehensive Testing
-                  </li>
-                  <li className="mb-4 text-black last:mb-0">
-                    6 Months Free Maintenance
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card 3: Design & Graphics */}
-            <div className="animate_top group relative rounded-lg border border-gray-200 bg-white p-7.5 shadow-lg md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black xl:text-5xl">
-                $49{' '}
-                <span className="text-regular text-gray-500">(starting)</span>
-              </h3>
-              <h4 className="mb-2.5 text-lg font-medium text-black">
-                Design & Graphics
-              </h4>
-              <p className="text-gray-600">
-                Bring your ideas to life with animation.
-              </p>
-              <div className="mt-9 border-t border-gray-200 pb-12.5 pt-9">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0">Storyboards</li>
-                  <li className="mb-4 text-black last:mb-0">Exported Assets</li>
-                  <li className="mb-4 text-black last:mb-0">Final Videos</li>
-                  <li className="mb-4 text-black last:mb-0">Unlimited Revisions</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+
+      {/* Navigation Buttons */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+      >
+        &#10094;
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+      >
+        &#10095;
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full ${
+              currentIndex === index ? 'bg-white' : 'bg-gray-400'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 

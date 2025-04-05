@@ -49,7 +49,7 @@ export default function SoftwareProcessTimeline() {
     >
       <div className=" mx-auto text-left">
         <h2 className="text-3xl sm:text-4xl flex flex-1 font-bold text-gray-900 mb-6">
-          How We Build :  <span className="text-blue-500">A Steamline Process</span> <img src={logo} alt="" className='h-10 w-10 mt-1 ml-1 rotate-180' />
+          How We Build :  <span className="text-blue-500 ml-2">A Steamline Process</span> <img src={logo} alt="" className='h-10 w-10 mt-1 ml-1 rotate-180' />
         </h2>
         <p className="text-xl text-gray-600 text-left mx-auto">
           We don't just build software—we architect streamlined, scalable, and user-focused digital solutions through modern Agile practices and deep human insight.

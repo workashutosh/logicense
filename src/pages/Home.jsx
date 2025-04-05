@@ -88,35 +88,12 @@ const Home = () => {
             {/* Transform Ideas Section */}
             <TransformIdeasSection />
 
+                  {/* Pricing Section */}
+      <PricingSection />
+
       {/* Features Section */}
       <Features />
 
-      {/* How We Solve Your Problems Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white/5 backdrop-blur-sm">
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-10 sm:mb-12">How We Solve Your Software Challenges</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 max-w-6xl mx-auto">
-    <div className="p-6 bg-white/30 rounded-lg hover:bg-white/15 transition-all shadow-md shadow-blue-300/20 duration-300 border border-blue-100/10">
-      <h3 className="text-xl font-semibold text-white mb-2">Struggling with Slow Systems?</h3>
-      <p className="text-white text-base">
-        We've cut load times from 8+ seconds to under 2, boosting user engagement by 35%. We fix the real issues at the source, not just the symptoms.
-      </p>
-    </div>
-    
-    <div className="p-6 bg-white/30 rounded-lg hover:bg-white/15 transition-all shadow-md shadow-blue-300/20 duration-300 border border-blue-100/10">
-      <h3 className="text-xl font-semibold text-white mb-2">Trapped by Outdated Technology?</h3>
-      <p className="text-white text-base">
-        One client recovered $12,000 monthly after our updates. We reimagine what's possible while preserving your existing data and workflows.
-      </p>
-    </div>
-    
-    <div className="p-6 bg-white/20 rounded-lg hover:bg-white/15 transition-all shadow-md shadow-blue-300/20 duration-300 border border-blue-100/10">
-      <h3 className="text-xl font-semibold text-white mb-2">Drowning in Complex Processes?</h3>
-      <p className="text-white text-base">
-        We turned 23 hours of weekly manual work into just 2 for a marketing agency. Focus on strategy, not spreadsheets.
-      </p>
-    </div>
-  </div>
-</section>
 
       {/* Stats Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6  md:px-8 bg-blue-600 text-white">
@@ -201,8 +178,7 @@ const Home = () => {
         </div>
       </section> */}
 
-      {/* Pricing Section */}
-      <PricingSection />
+
 
       {/* Testimonials Section */}
       <Testimonials />
