@@ -7,13 +7,17 @@ import Testimonials from './Testimonials';
 import About from './About';
 import logo from "../assets/logo.png"; 
 import { Star, Quote, Calendar, ChevronRight, CheckCircle, Users, Clock, Award } from 'lucide-react';
+import Why from './Why';
+import ComparisonTable from './ComparisonTable';
 
 const Home = () => {
   return (
-    <div className="min-h-[400px] font-sans  bg-center" style={{ backgroundImage: 'url("https://keynote.tailwindui.com/_next/static/media/background.6c3571e0.jpg")' }}>
+    <div className="" >
 
       {/* Main Hero Section */}
-     <main className="min-h-[570px]  flex flex-col items-left justify-center text-center px-4 sm:px-6 md:px-8 py-12 sm:py-16">
+     <main className="font-sans  bg-center min-h-[570px]  flex flex-col items-left justify-center text-center px-4 sm:px-6 md:px-8 py-12 sm:py-16"
+     style={{ backgroundImage: 'url("https://keynote.tailwindui.com/_next/static/media/background.6c3571e0.jpg")' }}
+     >
       <div className="max-w-4xl w-full">
 
         {/* Main headline */}
@@ -42,7 +46,15 @@ const Home = () => {
     </main>
 
       {/* About Section */}
-      {/* <About /> */}
+      <About /> 
+
+      {/* Why Choose Us Section */}
+      <Why />
+
+      {/* Comparison Table Section */}
+      <ComparisonTable />
+
+      {/* Testimonials Section */}
 
       {/* Services Section */}
       <Services />
