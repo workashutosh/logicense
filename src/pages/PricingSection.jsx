@@ -38,7 +38,7 @@ const PricingSection = () => {
 
   return (
     <div className="relative w-full overflow-hidden">
-      <h3 className='text-left py-4 px-8 text-2xl bg-black text-blue-500 font-bold'>Designs on your FingerTips ?</h3>
+      <h3 className='text-left py-4 px-8 text-2xl bg-black text-blue-300 font-bold'>Designs on your FingerTips ?</h3>
       {/* PricingSection Container */}
       <div 
         className="flex transition-transform duration-500 ease-in-out"
@@ -52,7 +52,7 @@ const PricingSection = () => {
             <img 
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-auto object-cover"
+              className="w-full h-fit object-cover"
               onError={(e) => {
                 // Fallback for the Dribbble URL that's not a direct image
                 e.target.src = 'https://via.placeholder.com/1500x500?text=Image+Not+Available';

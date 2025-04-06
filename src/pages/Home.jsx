@@ -10,6 +10,7 @@ import { Star, Quote, Calendar, ChevronRight, CheckCircle, Users, Clock, Award }
 import Why from './Why';
 import ComparisonTable from './ComparisonTable';
 import SoftwareProcessTimeline from './SoftwareProcessTimeline';
+import IndustryCards from './IndustryCards';
 
 const Home = () => {
   return (
@@ -85,10 +86,14 @@ const Home = () => {
       {/* Software Process Timeline Section */}
       <SoftwareProcessTimeline />
 
-            {/* Transform Ideas Section */}
-            <TransformIdeasSection />
+      {/* Transform Ideas Section */}
+      <TransformIdeasSection />
 
-                  {/* Pricing Section */}
+      {/* Industry Cards Section */}
+      <IndustryCards />
+
+
+      {/* Pricing Section */}
       <PricingSection />
 
       {/* Features Section */}
