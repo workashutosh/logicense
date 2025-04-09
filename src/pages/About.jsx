@@ -1,5 +1,6 @@
 import React from 'react';
-import art from '../../public/art.jpeg'
+import art from "../assets/art.jpeg"; 
+
 
 const About = () => {
   return (
@@ -17,7 +18,7 @@ const About = () => {
           <div className="relative w-full h-80 lg:h-96 ">
             {/* Placeholder for professional image */}
             <img
-              src="../../public/art.jpeg" 
+              src={art}
               alt="Logisence Team"
               className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
             />
