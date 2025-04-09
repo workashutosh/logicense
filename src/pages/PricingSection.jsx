@@ -38,7 +38,7 @@ const PricingSection = () => {
 
   return (
     <div className="relative w-full overflow-hidden">
-      <h3 className='text-left py-4 px-8 text-2xl bg-black text-blue-300 font-bold'>Designs on your FingerTips ?</h3>
+      <h3 className='text-left py-8 px-12 text-3xl bg-black text-blue-300 font-bold'>Designs on your FingerTips ?</h3>
       {/* PricingSection Container */}
       <div 
         className="flex transition-transform duration-500 ease-in-out"
