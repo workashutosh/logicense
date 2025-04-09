@@ -118,7 +118,7 @@ const IndustryCards = () => {
 
   return (
     <div className="w-full px-6 py-16 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Diverse Capabilities</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
