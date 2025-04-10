@@ -11,6 +11,7 @@ import Why from './Why';
 import ComparisonTable from './ComparisonTable';
 import SoftwareProcessTimeline from './SoftwareProcessTimeline';
 import IndustryCards from './IndustryCards';
+import WhatNotToWorryAbout from './WhatNotToWorryAbout';
 
 const Home = () => {
   return (
@@ -59,6 +60,9 @@ const Home = () => {
       {/* Services Section */}
       <Services />
 
+      {/* What Not To Worry About Section */}
+      <WhatNotToWorryAbout />
+
       {/* Why custom software Section */}
 
       <section className='bg-[#006EFF] h-fit flex flex-col px-8 py-12 relative'>
@@ -96,8 +100,8 @@ const Home = () => {
       {/* Pricing Section */}
       <PricingSection />
 
-      {/* Features Section */}
-      <Features />
+      {/* Features Section
+      <Features /> */}
 
       {/* Testimonials Section */}
       <Testimonials />

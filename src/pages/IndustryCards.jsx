@@ -117,8 +117,16 @@ const IndustryCards = () => {
   ];
 
   return (
-    <div className="w-full px-6 py-16 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-8xl mx-auto">
+<div className="relative py-16 px-4">
+      {/* Grid background */}
+      <div 
+        className="absolute overflow-hidden inset-0 -z-10 h-full w-full"
+        style={{
+          backgroundColor: '#fafafa',
+          backgroundImage: 'linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px)',
+          backgroundSize: '14px 24px'
+        }}
+      ></div>      <div className="max-w-8xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Diverse Capabilities</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">

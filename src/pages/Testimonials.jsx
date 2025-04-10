@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { Star, Quote, Calendar, ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Star, Quote, Calendar, ChevronRight, ChevronLeft } from 'lucide-react';
 
 const TestimonialCards = () => {
   const scrollRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   
   const testimonials = [
     {
@@ -50,14 +51,38 @@ const TestimonialCards = () => {
 
   const handleScroll = () => {
     if (scrollRef.current) {
-      setScrollPosition(scrollRef.current.scrollLeft);
+      const newPosition = scrollRef.current.scrollLeft;
+      setScrollPosition(newPosition);
+      
+      // Calculate which testimonial is most visible
+      const cardWidth = scrollRef.current.clientWidth;
+      const newIndex = Math.round(newPosition / cardWidth);
+      setActiveIndex(Math.min(newIndex, testimonials.length - 1));
     }
   };
 
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll);
+      return () => scrollContainer.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
-    <div className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-blue-50 to-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 text-center mb-10 sm:mb-16">Problems Solved, Clients Happy</h2>
+    <div className="relative py-16 px-4">
+      {/* Grid background */}
+      <div 
+        className="absolute overflow-hidden inset-0 -z-10 h-full w-full"
+        style={{
+          backgroundColor: '#fafafa',
+          backgroundImage: 'linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px)',
+          backgroundSize: '14px 24px'
+        }}
+      ></div>
+      
+      <div className="max-w-8xl mx-auto">
+        <h2 className="text-3xl font-bold text-blue-600 text-center mb-10">Problems Solved, Clients Happy</h2>
         
         <div className="relative">
           {/* Navigation buttons */}
@@ -81,10 +106,14 @@ const TestimonialCards = () => {
             </button>
           </div>
 
-          {/* Scrollable testimonials container */}
+          {/* Scrollable testimonials container with custom scrollbar hiding */}
           <div 
             ref={scrollRef}
-            className="flex overflow-x-auto pb-6 snap-x snap-mandatory hide-scrollbar"
+            className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
+            style={{
+              msOverflowStyle: 'none', /* IE and Edge */
+              scrollbarWidth: 'none', /* Firefox */
+            }}
             onScroll={handleScroll}
           >
             {testimonials.map((testimonial, index) => (
@@ -126,34 +155,40 @@ const TestimonialCards = () => {
             ))}
           </div>
           
-          {/* Mobile scroll indicator */}
+          {/* Mobile scroll indicator dots */}
           <div className="mt-4 flex justify-center items-center md:hidden">
             {testimonials.map((_, idx) => (
               <div 
                 key={idx} 
-                className={`h-2 w-2 rounded-full mx-1 ${idx === Math.round(scrollPosition / (scrollRef.current?.clientWidth || 1)) ? 'bg-blue-600' : 'bg-blue-200'}`}
+                className={`h-2 w-2 rounded-full mx-1 ${idx === activeIndex ? 'bg-blue-600' : 'bg-blue-200'}`}
               />
             ))}
           </div>
         </div>
-
-        
       </div>
     </div>
   );
 };
 
-// Add this CSS class to hide scrollbars while maintaining functionality
-const style = document.createElement('style');
-style.textContent = `
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari and Opera */
-  }
-`;
-document.head.appendChild(style);
+// Add CSS for hiding scrollbars using a React approach
+const TestimonialCarousel = () => {
+  useEffect(() => {
+    // Add custom style to hide scrollbars
+    const style = document.createElement('style');
+    style.textContent = `
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Cleanup on unmount
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
-export default TestimonialCards;
+  return <TestimonialCards />;
+};
+
+export default TestimonialCarousel;
