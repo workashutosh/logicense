@@ -60,8 +60,7 @@ const Home = () => {
       {/* Services Section */}
       <Services />
 
-      {/* What Not To Worry About Section */}
-      <WhatNotToWorryAbout />
+      
 
       {/* Why custom software Section */}
 
@@ -97,8 +96,8 @@ const Home = () => {
       <IndustryCards />
 
 
-      {/* Pricing Section */}
-      <PricingSection />
+      {/* What Not To Worry About Section */}
+      <WhatNotToWorryAbout />
 
       {/* Features Section
       <Features /> */}
