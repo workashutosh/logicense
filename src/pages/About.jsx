@@ -1,33 +1,35 @@
 import React from 'react';
 import art from "../assets/art.jpeg"; 
-
+import BoxReveal from './BoxReveal.jsx'
+import AnimatedBeamMultipleOutputDemo from "../components/AnimatedBeamMultipleOutputDemo.jsx";
 
 const About = () => {
   return (
     <div
-      className="min-h-fit font-sans bg-gray-800 text-white overflow-hidden"
-      style={{
-        backgroundImage: 'url(/path-to-subtle-futuristic-bg.jpg)', // Optional: Add a subtle background image
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="min-h-fit font-sans  text-white overflow-hidden"
     >
-      <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between">
+      <section className=" mx-auto bg-gray-800 px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row justify-center content-center ">
         {/* Left Side: Visual Section */}
-        <div className="w-full lg:w-1/2 mb-12 p-12  lg:mb-0">
-          <div className="relative w-full h-80 lg:h-96 ">
-            {/* Placeholder for professional image */}
-            <img
-              src={art}
-              alt="Logisence Team"
-              className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
-            />
-            <div className=""></div>
-          </div>
+        <div className="w-[30%] bg-transparent z-10 lg:w-1/2 lg:mb-0">            
+        <div className="relative rounded-4xl">
+  {/* Grid background */}
+  <div 
+    className="absolute inset-0 -z-10 rounded-4xl h-full w-full overflow-hidden"
+    style={{
+      background: '#fafafa',
+      backgroundImage: `
+        linear-gradient(to right, rgba(128, 128, 128, 0.15) 1px, transparent 1px), 
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.15) 1px, transparent 1px)
+      `,
+      backgroundSize: '14px 24px'
+    }}
+  ></div> 
+  <AnimatedBeamMultipleOutputDemo className="rounded-4xl" />
+</div>
         </div>
 
         {/* Right Side: Content Section */}
-        <div className="w-full lg:w-1/2 lg:pl-12">
+        <div className="w-[70%]  lg:w-1/2 pr-12 p-4 lg:pl-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-600 mb-6 leading-tight">
             Build ‘lean’ custom software with those 20% features that will have 80% impact.
           </h1>
