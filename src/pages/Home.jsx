@@ -86,7 +86,7 @@ const Home = () => {
   </p>
       </section>
 
-      {/* Software Process Timeline Section */}
+      {/* Software Process Timeline Section Logicense */}
       <SoftwareProcessTimeline />
 
       {/* Transform Ideas Section */}
