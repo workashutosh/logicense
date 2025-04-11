@@ -10,7 +10,7 @@ const About = () => {
     >
       <section className=" mx-auto bg-gray-800 px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row justify-center content-center ">
         {/* Left Side: Visual Section */}
-        <div className="w-[30%] bg-transparent z-10 lg:w-1/2 lg:mb-0">            
+        <div className="w-full bg-transparent z-10 lg:w-1/2 lg:mb-0">            
         <div className="relative rounded-4xl">
   {/* Grid background */}
   <div 
@@ -29,7 +29,7 @@ const About = () => {
         </div>
 
         {/* Right Side: Content Section */}
-        <div className="w-[70%]  lg:w-1/2 pr-12 p-4 lg:pl-12">
+        <div className="w-full  lg:w-1/2 pr-12 p-4 lg:pl-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-600 mb-6 leading-tight">
             Build ‘lean’ custom software with those 20% features that will have 80% impact.
           </h1>
