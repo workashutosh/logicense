@@ -146,7 +146,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-14 md:py-16 bg-white"
+    <section id="services-section" className="py-14 md:py-16 bg-white"
     style={{ backgroundImage: 'url("https://keynote.tailwindui.com/_next/static/media/background.6c3571e0.jpg")' }}
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">

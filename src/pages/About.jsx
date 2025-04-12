@@ -5,7 +5,8 @@ import AnimatedBeamMultipleOutputDemo from "../components/AnimatedBeamMultipleOu
 
 const About = () => {
   return (
-    <div
+    <section
+    id='about-section'
       className="min-h-fit font-sans  text-white overflow-hidden"
     >
       <section className=" mx-auto bg-gray-800 px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row justify-center content-center ">
@@ -53,7 +54,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

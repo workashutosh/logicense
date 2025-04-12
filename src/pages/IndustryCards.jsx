@@ -117,7 +117,9 @@ const IndustryCards = () => {
   ];
 
   return (
-<div className="relative py-16 px-4">
+<section 
+id='industry-section'
+className="relative py-16 px-4">
       {/* Grid background */}
       <div 
         className="absolute overflow-hidden inset-0 -z-10 h-full w-full"
@@ -306,7 +308,7 @@ const IndustryCards = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
