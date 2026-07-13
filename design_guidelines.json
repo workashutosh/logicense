@@ -1,0 +1,156 @@
+{
+  "theme": {
+    "mode": "dark-default",
+    "toggle": true
+  },
+  "colors": {
+    "dark": {
+      "background": "#09090b",
+      "surface": "#121214",
+      "surface_hover": "#18181b",
+      "border": "rgba(255, 255, 255, 0.1)",
+      "text_primary": "#fafafa",
+      "text_secondary": "#a1a1aa",
+      "accent_muted_blue": "#3b82f6",
+      "accent_hover": "#2563eb",
+      "code_bg": "#000000",
+      "error": "#ef4444",
+      "success": "#22c55e"
+    },
+    "light": {
+      "background": "#fafafa",
+      "surface": "#ffffff",
+      "surface_hover": "#f4f4f5",
+      "border": "rgba(0, 0, 0, 0.1)",
+      "text_primary": "#09090b",
+      "text_secondary": "#52525b",
+      "accent_muted_blue": "#2563eb",
+      "accent_hover": "#1d4ed8",
+      "code_bg": "#1e1e1e",
+      "error": "#dc2626",
+      "success": "#16a34a"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Chivo, sans-serif",
+      "body": "IBM Plex Sans, sans-serif",
+      "mono": "IBM Plex Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl tracking-tighter font-black",
+      "h2": "text-4xl md:text-5xl tracking-tight font-bold",
+      "h3": "text-2xl md:text-3xl tracking-tight font-semibold",
+      "h4": "text-xl md:text-2xl tracking-tight font-medium",
+      "body_lg": "text-lg leading-relaxed",
+      "body": "text-base leading-relaxed",
+      "body_sm": "text-sm leading-relaxed",
+      "overline": "text-xs uppercase tracking-[0.2em] font-mono",
+      "code": "text-sm font-mono tracking-tight"
+    }
+  },
+  "spacing": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12 lg:px-24",
+    "section_py": "py-24 md:py-32",
+    "gap_sm": "gap-4",
+    "gap_md": "gap-8",
+    "gap_lg": "gap-16",
+    "gap_xl": "gap-24"
+  },
+  "layout_patterns": {
+    "global": "Generous whitespace, asymmetric layouts favored over perfectly centered. 'Swiss Brutalist' aesthetic. Use grids heavily. Content is king.",
+    "header": "Sticky header (z-50), crystal glassmorphism or solid bg. Logo left, page links center, 'Book a call' button and theme toggle right. MUST have `data-testid` on links.",
+    "footer": "Large padding (py-24), grid layout for sitemap, contact email, social placeholders. Bottom copyright line.",
+    "hero": "Typography-led. Large H1, constrained max-width for text, adjacent to a technical visual (terminal window or architecture snippet).",
+    "bento_grid": "Use grid-cols-1 md:grid-cols-12. Span 8 for primary feature, span 4 for secondary. Gap-8 to gap-12."
+  },
+  "component_patterns": {
+    "buttons": "Minimalist. rounded-sm. Primary: bg-accent text-white hover:bg-accent_hover. Secondary: border border-border bg-transparent hover:bg-surface. Include hover translate or subtle glow.",
+    "cards": "Flat surfaces (no heavy drop shadows). 1px border. rounded-sm. On hover: slight border color change and subtle -translate-y-1.",
+    "code_blocks": "Terminal-style header (3 dots), monospace font, dark background even in light mode for code syntax. Syntax highlighting in muted colors (blues, greens, grays).",
+    "form": "Shadcn UI forms. Sharp corners (rounded-sm). Clear focus states (ring-accent). Dummy submit with sonner toast on success.",
+    "nav": "Desktop: visible links (not hamburger). Mobile: hamburger menu. Active link state should be clear (e.g., text-accent or underline)."
+  },
+  "motion_patterns": {
+    "library": "framer-motion",
+    "entrance": "Staggered fade-up (y: 20, opacity: 0) on scroll using `whileInView`. Keep duration short (0.4s) to feel snappy.",
+    "interactions": "Hover states on all clickable elements. Button scale on tap (scale: 0.98).",
+    "reduced_motion": "Respect `prefers-reduced-motion`."
+  },
+  "pages": {
+    "home": {
+      "sections": ["Hero with technical visual", "Services Overview (Cards)", "Industries Strip (Marquee or Grid)", "Process Teaser", "Work Teaser", "Tech Stack Showcase", "CTA"]
+    },
+    "about": {
+      "sections": ["Mission Statement", "Engineering Principles (List/Grid)", "Team (Placeholder cards)"]
+    },
+    "services": {
+      "sections": ["Header", "Service Details (AI Agents, RAG, Chatbots, Workflow) with terminal/architecture snippets", "CTA"]
+    },
+    "industries": {
+      "sections": ["Header", "Domain Grid (Logistics, Real Estate, Retail, Manufacturing, Healthcare, Legal, 3D/Arch) with specific use cases", "CTA"]
+    },
+    "process": {
+      "sections": ["Header", "Timeline (Discovery -> Prototype -> Build -> Deploy -> Iterate)"]
+    },
+    "work": {
+      "sections": ["Header", "2-3 Case Study Cards (Marked TODO with placeholder content)", "CTA"]
+    },
+    "technology": {
+      "sections": ["Header", "Stack Showcase (LLMs, Vector DBs, Orchestration, Deployment)", "Agent Loop Diagram (Visual)"]
+    },
+    "contact": {
+      "sections": ["Header", "Contact Form (Dummy submit + Toast)", "Contact Info (Email/Address)"]
+    }
+  },
+  "media": {
+    "strategy": "Prefer code snippets, terminal visuals, and abstract geometric or architecture patterns over stock photos. No robots. No brains.",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1527576539890-dfa815648363",
+        "description": "Minimalist architecture, useful for About page or Hero background texture.",
+        "category": "texture"
+      },
+      {
+        "url": "https://images.pexels.com/photos/37730212/pexels-photo-37730212.jpeg",
+        "description": "Server rack, useful for Technology page.",
+        "category": "technology"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738",
+        "description": "Shipping containers aerial, useful for Logistics industry card.",
+        "category": "industry_logistics"
+      }
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure 4.5:1 ratio for normal text. Avoid fully transparent backgrounds for overlays.",
+    "testing": "All interactive elements MUST include `data-testid` (e.g., `data-testid=\"contact-submit-button\"`).",
+    "forms": "Inputs must have associated labels. Focus rings must be visible."
+  },
+  "instructions_to_main_agent": [
+    "Install required fonts: Chivo, IBM Plex Sans, IBM Plex Mono via Google Fonts.",
+    "Install libraries: framer-motion, lucide-react, sonner, next-themes.",
+    "Configure Tailwind CSS to use the specified custom colors and fonts.",
+    "Build the 8 requested pages: Home, About, Services, Industries, Process, Work, Technology, Contact.",
+    "Implement light/dark mode toggle using next-themes.",
+    "For the Technology and Services pages, build custom 'Terminal' or 'Architecture' block components that display faux code or JSON using standard HTML/CSS + Tailwind. DO NOT use placeholder images for this.",
+    "Implement the Work case study placeholders with clear 'TODO' markings as requested.",
+    "Do NOT use consumer SaaS aesthetics (no purple-blue gradients, no floating 3D blobs).",
+    "Keep standard Shadcn components for forms, but style them with sharp edges and muted blue accents.",
+    "Ensure the contact form uses 'sonner' for the success toast.",
+    "Add 'data-testid' to all links, buttons, and form elements.",
+    "Make sure header is sticky with proper backdrop blur and contrast.",
+    "Do not use `App { text-align: center }`. Maintain left alignment for content."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic 'AI slop' aesthetic. Create distinctive, serious B2B engineering frontend.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Every interaction needs micro-animations - hover states, transitions, entrance animations. Static = dead.",
+    "DO NOT use universal transition (`transition: all`).",
+    "DO NOT apply global text-align center.",
+    "DO NOT use emoji characters for icons. Use lucide-react.",
+    "Create depth through layered design elements with z-index hierarchy and 1px borders.",
+    "Prioritize using pre-existing components from src/components/ui when applicable."
+  ]
+}

@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Light mode */
+        --background: 0 0% 98%;
+        --foreground: 240 10% 4%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 4%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 4%;
+        --primary: 240 10% 4%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 5% 96%;
+        --secondary-foreground: 240 10% 4%;
+        --muted: 240 5% 96%;
+        --muted-foreground: 240 4% 32%;
+        --accent: 217 76% 45%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 6% 88%;
+        --input: 240 6% 88%;
+        --ring: 217 76% 45%;
+        --radius: 0.25rem;
+
+        /* Custom Logicense tokens */
+        --lg-accent: 217 76% 45%;
+        --lg-accent-hover: 221 83% 40%;
+        --lg-code-bg: 240 6% 10%;
+        --lg-code-fg: 0 0% 92%;
+        --lg-grid: 240 6% 90%;
+    }
+
+    .dark {
+        --background: 240 6% 5%;
+        --foreground: 0 0% 98%;
+        --card: 240 6% 7%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 6% 7%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 10% 4%;
+        --secondary: 240 4% 12%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 4% 12%;
+        --muted-foreground: 240 5% 65%;
+        --accent: 217 88% 62%;
+        --accent-foreground: 240 10% 4%;
+        --destructive: 0 62% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 4% 15%;
+        --input: 240 4% 15%;
+        --ring: 217 88% 62%;
+
+        --lg-accent: 217 88% 62%;
+        --lg-accent-hover: 217 88% 70%;
+        --lg-code-bg: 0 0% 0%;
+        --lg-code-fg: 0 0% 92%;
+        --lg-grid: 240 4% 12%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        margin: 0;
+        font-family:
+            "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, sans-serif;
+        @apply bg-background text-foreground;
+        font-feature-settings:
+            "ss01" on,
+            "cv11" on;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Chivo", "IBM Plex Sans", ui-sans-serif, system-ui,
+            sans-serif;
+        letter-spacing: -0.02em;
+    }
+
+    code,
+    pre,
+    kbd,
+    samp {
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo,
+            monospace;
+        font-feature-settings: "zero" on;
+    }
+
+    ::selection {
+        background: hsl(var(--lg-accent) / 0.35);
+        color: hsl(var(--foreground));
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: "Chivo", "IBM Plex Sans", sans-serif;
+    }
+
+    .font-mono {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    .lg-accent {
+        color: hsl(var(--lg-accent));
+    }
+
+    .lg-bg-accent {
+        background-color: hsl(var(--lg-accent));
+    }
+
+    .lg-border-accent {
+        border-color: hsl(var(--lg-accent));
+    }
+
+    .lg-grid-bg {
+        background-image:
+            linear-gradient(hsl(var(--lg-grid)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--lg-grid)) 1px, transparent 1px);
+        background-size: 64px 64px;
+        background-position: -1px -1px;
+    }
+
+    .lg-noise {
+        position: relative;
+    }
+
+    .lg-noise::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+        opacity: 0.04;
+        pointer-events: none;
+        mix-blend-mode: overlay;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .text-pretty {
+        text-wrap: pretty;
+    }
+}
+
+/* Debug wrapper preserved */
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
