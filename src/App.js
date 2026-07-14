@@ -13,6 +13,7 @@ import Work from "@/pages/Work";
 import Technology from "@/pages/Technology";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
+import Landing from "@/pages/Landing";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
             <div className="App">
                 <BrowserRouter>
                     <Routes>
+                        <Route path="/landing" element={<Landing />} />
                         <Route element={<Layout />}>
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
